@@ -11,9 +11,10 @@ if (firstNum === null || secondNum === null || firstNum.trim() === '' || secondN
   } else {
     const tagResult = document.querySelector('.result');
     tagResult.innerHTML =
-      `a + b = ${firstNum + secondNum}` + "<br>" +
-      `a - b = ${firstNum - secondNum}` + "<br>" +
-      `a * b = ${firstNum * secondNum}` + "<br>" +
-      `a / b = ${firstNum / secondNum}`;
+      `The user entered the values ${firstNum} and ${secondNum}:` + "<br>" +
+      `${firstNum} + ${secondNum} = ${firstNum + secondNum}` + "<br>" +
+      `${firstNum} - ${secondNum} = ${firstNum - secondNum}` + "<br>" +
+      `${firstNum} * ${secondNum} = ${firstNum * secondNum}` + "<br>" +
+      `${firstNum} / ${secondNum} = ${firstNum / secondNum}`;
   }
 }
