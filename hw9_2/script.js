@@ -1,37 +1,18 @@
 const lengthArr = Number(prompt("Введіть розмірність масиву arrA:"));
-let arrA = [...new Array(length)];
+let arrA = new Array(lengthArr).fill(null).map(() => Math.floor(Math.random() * 100) + 1);
 
-for (let i = 0; i < lengthArr; i++) {
-  arrA[i] = Math.floor(Math.random() * 100) + 1;
+let arrB = arrA.filter(isSimpleNum);
+
+function isSimpleNum(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+  }
+  return true;
 }
 
-let arrB = [];
-for (let i = 0; i < arrA.length; i++) {
-  let isSimpleNum = true;
-
-  for (let j = 2; j < arrA[i]; j++) {
-    if (arrA[i] % j === 0) {
-      isSimpleNum = false;
-      break;
-    }
-  }
-
-  if (isSimpleNum) {
-    arrB.push(arrA[i]);
-  }
-}
-
-let minNum = arrB[0];
-let maxNum = arrB[0];
-
-for (let i = 1; i < arrB.length; i++) {
-  if (arrB[i] < minNum) {
-    minNum = arrB[i];
-  }
-  if (arrB[i] > maxNum) {
-    maxNum = arrB[i];
-  }
-}
+let minNum = Math.min(...arrB);
+let maxNum = Math.max(...arrB);
 
 const taskResult = document.querySelector('.loops-random');
 
