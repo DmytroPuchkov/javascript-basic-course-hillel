@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  background-color: #262E40;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #313B50;
+  font-family: 'Lora', serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  background-color: #313B50;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 4px;
+}
+
+.note {
+  min-width: 552px;
+  max-width: 552px;
+  min-height: 80px;
+  height: 400px;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  color: #fff;
+  padding: 24px;
+  border: 2px solid #3F4B67;
+  background-color: #22293A;
+  font-size: 16px;
+  font-family: 'Lora', serif;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-note {
+  background-color: #fdfa66;;
+  color: #313B50;
+}
+
+.delete-note {
+  color: #e0344e;
+}
+
+.note:focus {
+  outline: none;
+  border: 2px solid #fdfa66;
+}
+
+.info-note {
+  color: #79849f;
+  font-size: 14px;
+}
