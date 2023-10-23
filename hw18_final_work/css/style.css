@@ -1,0 +1,392 @@
+:root {
+  --color-bg-body: #0b090a;
+  --color-bg-info: #161a1d;
+  --color-enemy: #82090b;
+  --color-hero: #6a5acd;
+  --color-main-text: #ffffff;
+  --color-life-couner: #f83030;
+  --color-btn-fight:#2db52d;
+  --color-btn-start:#782db5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Tektur', sans-serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-bg-body);
+  color: var(--color-main-text);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'Stalinist One', sans-serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Stalinist One', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.info {
+  flex: 1;
+  padding: 40px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.magic-place {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  justify-content: space-between;
+  background-image: url('../img/magic-place.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.enemy-place {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.fight-place {
+  flex: 1;
+}
+
+.hero-place {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  flex: 1;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.btn {
+  border: none;
+  max-width: 260px;
+  min-width: 200px;
+  height: 48px;
+  color: var(--color-main-text);
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-hero {
+  background-color: var(--color-hero);
+}
+
+.btn-hero:hover {
+  background-color: #523a83;
+}
+
+.btn-enemy {
+  background-color: var(--color-enemy);
+}
+
+.btn-enemy:hover {
+  background-color: #610000;
+}
+
+.btn-fight {
+  background-color: var(--color-btn-fight);
+}
+
+.btn-fight:hover {
+  background-color: #005100;
+}
+
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+}
+
+.enemy-cards {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Tektur', sans-serif;
+  letter-spacing: 1px;
+}
+
+.card {
+  width: 186px;
+  background-color: #161616;
+  border-radius: 8px;
+  padding: 0 8px;
+  background-image: url('../img/card-back.jpg');
+  background-size: cover;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.card-image {
+  position: relative;
+  height: 120px;
+}
+
+.card-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.card-stats {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  gap: 8px;
+}
+
+.card-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selected-hero-card {
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border: 2px solid var(--color-hero);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.selected-enemy-card {
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border: 2px solid var(--color-enemy);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.lose {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.card-life-counter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 34%;
+  left: 38%;
+  font-size: 32px;
+  font-weight: 600;
+  background-color: var(--color-life-couner);
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+}
+
+.info-log {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-message {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-color {
+  color: var(--color-hero);
+}
+
+.enemy-color {
+  color: var(--color-enemy);
+}
+
+.controls-text {
+  margin-top: 32px;
+  font-weight: 600;
+  font-size: 18px;
+  max-width: 240px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.card.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/cover.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.log-date {
+  font-size: 12px;
+}
+
+.copy-link {
+  text-decoration: underline;
+  color: var(--color-btn-start);
+}
+
+.intro {
+  position: fixed;
+  background-color: var(--color-bg-body);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-wrapper {
+  background-color: var(--color-bg-info);
+  padding: 40px;
+  width: 640px;
+}
+
+.intro-description {
+  margin: 24px 0 24px;
+  line-height: 1.8;
+  letter-spacing: 0.9px;
+}
+
+.btn-start {
+  background-color: var(--color-btn-start);
+}
+
+.info-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1496px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    gap: 0;
+    padding: 0;
+  }
+
+  .info {
+    padding: 24px 16px;
+  }
+
+  .controls {
+    padding: 8px;
+    gap: 16px;
+  }
+
+  .btn {
+    min-width: 160px;
+  }
+
+  .controls-text {
+    margin-top: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .intro-wrapper {
+    padding: 24px;
+    width: 640px;
+  }
+
+  .intro-description {
+    margin: 16px 0 16px;
+    line-height: 1.6;
+    letter-spacing: 0.9px;
+  }
+
+  .card {
+    width: 152px;
+  }
+
+  .card-header {
+    padding: 8px 0;
+  }
+
+  .card-image {
+    height: 100px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-stats {
+    gap: 2px;
+    padding: 8px 0;
+  }
+
+  .log-message {
+    font-size: 14px;
+    gap: 0px;
+  }
+}

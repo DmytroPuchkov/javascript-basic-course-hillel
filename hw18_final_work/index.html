@@ -4,14 +4,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HW18: Final work</title>
-  <link rel="stylesheet"type="text/css" href="./css/reset.css">
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>Битва драконів</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&family=Tektur:wght@400;600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <h1>Тут буде моя фінальна робота</h1>
-
+  <div class="intro">
+    <div class="intro-wrapper">
+      <h1>Випускна робота</h1>
+      <p class="intro-description">
+        Привіт! Ця гра є випускною роботою курсу "JavaScript Basic".
+      </p>
+      <p class="intro-description">
+        Ігровий процес - це змагання між двома колодами карток. Кожен із гравців отримує свою колоду (використовуючи
+        кнопки “Колода опонента” та “Моя колода”).
+      </p>
+      <p class="intro-description">
+        Після отримання колод треба обрати картку опонента і викласти свою та натиснути
+        кнопку “Бій”. "Сила" картки зменшує "Захисний потенціал" ("Захист" + ”Блок") іншої картки.
+      </p>
+      <p class="intro-description">
+        Картка, у якої буде найменше "Залишок життя" ("Захисний потенціал" -
+        "Сила"), вибуває з гри. Гравець, який втратив усі свої картки, програє.
+      </p>
+      <p class="intro-description">
+        Ця гра була створена виключно у навчальних цілях і не має комерційної цінності. Всі використані арти були
+        знайдені в інтернеті, я вдячний усім авторам за їхній талант та роботу.
+      </p>
+      <div class="info-controls">
+        <div class="copy">
+          © 2023 Dmytro Puchkov <a class="copy-link" href="https://www.linkedin.com/in/dmytro-puchkov/">LinkedIn</a>
+        </div>
+        <button class="btn btn-start">Грати</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="info">
+      <h1>Битва драконів</h1>
+      <div class="info-log"></div>
+      <div class="copy">
+        © 2023 Dmytro Puchkov <a class="copy-link" href="https://www.linkedin.com/in/dmytro-puchkov/">LinkedIn</a>
+      </div>
+    </div>
+    <div class="magic-place">
+      <div class="enemy-place">
+        <div class="enemy-cards"></div>
+      </div>
+      <div class="fight-place">
+      </div>
+      <div class="hero-place">
+        <div class="hero-cards"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <p class="controls-text">Оберіть колоду для гри</p>
+      <button type="button" class="btn btn-enemy">Колода опонента</button>
+      <button type="button" class="btn btn-hero">Моя колода</button>
+      <p class="controls-text">З кожною обраною карткою вас очікує Бій!</p>
+      <button type="button" class="btn btn-fight">Бій!</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 
