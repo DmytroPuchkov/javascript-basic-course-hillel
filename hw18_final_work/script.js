@@ -15,12 +15,12 @@ let IMAGES = [];
 let CARD_NAMES = [];
 
 fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-        IMAGES = data.IMAGES;
-        CARD_NAMES = data.CARD_NAMES;
-    })
-    .catch(error => console.error('Помилка завантаження JSON:', error));
+  .then(response => response.json())
+  .then(data => {
+    IMAGES = data.IMAGES;
+    CARD_NAMES = data.CARD_NAMES;
+  })
+  .catch(error => console.error('Помилка завантаження JSON:', error));
 
 const getRandomNumber = (min, max) => Math.floor(min + Math.random() * (max - min + 1));
 
