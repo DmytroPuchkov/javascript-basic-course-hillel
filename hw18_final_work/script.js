@@ -191,11 +191,19 @@ function resolveWinnerAndLoser() {
     const loseMessage = document.createElement('h2');
     loseMessage.innerText = "Програв!";
 
+    const restartButton = document.querySelector('.btn-restart');
+
     if (enemyCardsDeck && !enemyCardsDeck.hasChildNodes()) {
       enemyCardsDeck.appendChild(loseMessage);
+      restartButton.classList.remove('hidden');
     } else if (heroCardsDeck && !heroCardsDeck.hasChildNodes()) {
       heroCardsDeck.appendChild(loseMessage);
+      restartButton.classList.remove('hidden');
     }
+
+    restartButton.addEventListener('click', () => {
+      location.reload();
+    });
   }
 
   setTimeout(() => {

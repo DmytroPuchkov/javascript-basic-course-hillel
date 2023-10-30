@@ -127,6 +127,15 @@ h2 {
   background-color: #005100;
 }
 
+.hidden {
+  display: none;
+}
+
+.btn-restart {
+  background-color: var(--color-main-text);
+  color: var(--color-bg-body);
+}
+
 .hero-cards {
   display: flex;
   justify-content: center;
