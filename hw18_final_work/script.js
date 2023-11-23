@@ -68,7 +68,7 @@ const generateCard = () => {
 
 document.querySelector('.btn-hero').addEventListener('click', () => {
   if (heroCards.length >= 5) {
-    alert("У суперника повна колода!");
+    alert("У вас повна колода!");
     return;
   }
 
@@ -84,7 +84,7 @@ document.querySelector('.btn-hero').addEventListener('click', () => {
 
 document.querySelector('.btn-enemy').addEventListener('click', () => {
   if (enemyCards.length >= 5) {
-    alert("У вас повна колода!");
+    alert("У суперника повна колода!");
     return;
   }
 
